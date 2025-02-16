@@ -1,0 +1,27 @@
+#root {
+  margin: 0;
+  text-align: center;
+  width: 100%;
+  text-wrap-mode: nowrap;
+}
+
+.top-navbar {
+  background-color: #483434;
+  display: flex;
+  justify-content: space-between;
+  font-size: 2em;
+  align-items: center;
+}
+
+.top-navbar-menu {
+  li {
+    padding: 0.1rem 2rem;
+  }
+  list-style-type: none;
+  display: flex;
+  text-wrap-mode: nowrap;
+}
+
+.top-navbar-section {
+  padding: 10px 20px;
+}

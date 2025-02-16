@@ -1,9 +1,11 @@
 // import { useState } from 'react'
-import './App.css'
+import TopNavBar from "./components/TopNavBar.tsx";
+import "./App.scss";
 
 function App() {
   return (
     <>
+      <TopNavBar />
     </>
   )
 }
