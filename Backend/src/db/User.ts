@@ -1,6 +1,7 @@
-import mongoose, { Document, Schema, Model } from 'mongoose';
+import mongoose, { Document, Schema, Model, Types} from 'mongoose';
 
 export interface IUser extends Document {
+    _id: Types.ObjectId;
     username: string;
     email: string;
     authentication: IAuthentication;
@@ -8,6 +9,7 @@ export interface IUser extends Document {
     updatedAt: Date;
 }
 export interface IAuthentication extends Document {
+    id: Types.ObjectId;
     password: string,
     salt: string,
     sessionToken: string,
@@ -28,4 +30,8 @@ export default class User {
     private static model: Model<IUser> = mongoose.model<IUser>("User", User.UserSchema);
 
     public static Model(): Model<IUser> { return this.model; }
+
+    public static GetUserByEmail = (email: String) => this.model.findOne({ email });
+    public static GetUserByName = (username: String) => this.model.findOne({ username });
+    public static createUser = (values: Record<string, any>) => new this.model(values).save().then((user) => user.toObject());
 }
