@@ -1,0 +1,12 @@
+{
+    "welcome": {
+        "invitation": "Wszystkie notatki w jednym miejscu",
+        "welcome": "WITAJ",
+        "loginMessage": "Zaloguj się do swojego konta",
+        "email": "E-mail",
+        "password": "Hasło",
+        "login": "Logowanie",
+        "register": "Rejestracja",
+        "google": "Zaloguj za pomocą Google"
+    }
+}

@@ -1,11 +1,11 @@
 // import { useState } from 'react'
-import TopNavBar from "./components/TopNavBar.tsx";
+import Welcome from "./pages/Welcome/Welcome.tsx";
 import "./App.scss";
 
 function App() {
   return (
     <>
-      <TopNavBar />
+      <Welcome />
     </>
   )
 }

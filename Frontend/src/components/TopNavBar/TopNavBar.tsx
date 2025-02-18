@@ -1,3 +1,5 @@
+import "./TopNavBar.scss"
+
 export default function TopNavBar() {
     return <nav className="top-navbar">
         <HomeSection />

@@ -1,0 +1,12 @@
+{
+    "welcome": {
+        "invitation": "Every note in one place",
+        "welcome": "WELCOME",
+        "loginMessage": "Log into your account",
+        "email": "E-mail",
+        "password": "Password",
+        "login": "Log in",
+        "register": "Register",
+        "google": "Login with Google"
+    } 
+}
