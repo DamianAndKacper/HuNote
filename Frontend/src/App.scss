@@ -1,27 +1,28 @@
-#root {
+html {
   margin: 0;
   text-align: center;
   width: 100%;
-  text-wrap-mode: nowrap;
-}
-
-.top-navbar {
+  white-space:nowrap;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  font-size: 62.5%;
   background-color: #483434;
-  display: flex;
-  justify-content: space-between;
-  font-size: 2em;
-  align-items: center;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.top-navbar-menu {
-  li {
-    padding: 0.1rem 2rem;
-  }
-  list-style-type: none;
+body {
+  margin: 0;
   display: flex;
-  text-wrap-mode: nowrap;
+  min-width: 320px;
+  min-height: 100vh;
 }
 
-.top-navbar-section {
-  padding: 10px 20px;
+#root {
+  width: 100%;
 }
