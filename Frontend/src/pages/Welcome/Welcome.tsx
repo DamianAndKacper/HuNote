@@ -1,6 +1,8 @@
 import "./Welcome.scss"
 import {WelcomeText} from "../../data/constants.ts"
 import notebook from "../../assets/icons/notebook.webp";
+import poland from "../../assets/icons/poland.webp";
+import GoogleIcon from '@mui/icons-material/Google';
 
 
 export default function Welcome() {
@@ -19,18 +21,20 @@ function WelcomeTextSection() {
 
 function LoginSection() {
     return <section className="login-div-space">
+        <button className="language"><img src={poland} className="poland" alt="Poland"/></button>
         <div className="login-div">
-            <p className="welcome">{WelcomeText.Welcome}</p>
+            <h2>{WelcomeText.Welcome}</h2>
             <p>{WelcomeText.LoginMessage}</p>
             <img src={notebook} alt="Notebook"/>
             <form>
-                <input type="email" placeholder='{WelcomeText.Email}'/>
-                <input type="password" placeholder='{WelcomeText.Password}'/>
-                <input type="button" placeholder='{WelcomeText.Login}'/>
-                <input type="button" placeholder='{WelcomeText.Register}'/>
-                <input type="button" placeholder='{WelcomeText.Google}'/>
+                <input type="email" placeholder={WelcomeText.Email}/>
+                <input type="password" placeholder={WelcomeText.Password}/>
+                <div className="button-container">
+                    <button className="loginRegister">{WelcomeText.Login}</button>
+                    <button className="loginRegister">{WelcomeText.Register}</button>
+                </div>
+                <button className="google"><GoogleIcon className="googleIcon"/>{WelcomeText.Google}</button>
             </form>
         </div>
     </section>
-    
 }

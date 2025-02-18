@@ -24,6 +24,7 @@
     color: rgb(230, 227, 227);
     font-size: clamp(5rem,5vw,15rem);
     font-family: "Kodchasan", serif;
+    
 }
 
 .invitationMessage{
@@ -40,10 +41,33 @@
     @include center-content();
 }
 
+h2{
+    margin: 1.1em 0 0 0;
+    font-size: clamp(4rem,4vw,8.2rem);
+    color: rgb(28, 26, 26);
+    font-family: "KoHo", serif;
+    text-shadow: 0.02em 0.02em 0 rgba(74, 74, 74, 0.5);
+}
+
+.poland{
+    width: 2vw;
+    height: 2vh;
+    box-shadow: 0.05em 0.05em 0.05em 0.05em #201e1e;
+    border: 0.1em black solid;
+}
+
+.language{
+    background-color: transparent;
+    border: none;
+    position: sticky;
+    left: 96%;
+    bottom: 95%;
+}
+
 .login-div{
     width: 60%;
-    height: 80%;
-    border-radius: clamp(1.5rem,1.5vw,4.5rem);
+    height: 75%;
+    border-radius: 1em;
     margin: 20%;
     font-size: clamp(1.3rem, 1.3vw, 3.9rem);
     background-color: #D9D9D9;
@@ -51,11 +75,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 0.6rem solid #665454;
+    border: 0.35em solid #665454;
     p{
         font-family: "KoHo", serif;
         color: #666666;
         margin: 0;
+        text-shadow: 0 0.05em 0 #bababa;
     }
     img{
         width: 4vw;
@@ -65,11 +90,59 @@
     form{
         flex-direction: column;
         @include center-content();
+        input{
+            background-color: #f3f3f3;
+            width: 15vw;
+            height: 4.5vh;
+            margin: 0 0 1em 0;
+            border-radius: 0.75em;
+            border: none;
+            box-shadow: 0 0.1em 0 #9f9f9f;;
+            font-size: clamp(1.1rem, 1.1vw, 3.3rem);
+            font-family: "KoHo", serif;
+            color: #8B6D6D;
+            padding-left: 0.5em;
+        }
+        ::placeholder{
+            color: #8B6D6D;
+            opacity: 0.75;
+        }
     }
 }
 
-.welcome{
-    margin: 7.5vh 0 0 0!important;
-    font-size: clamp(4rem,4vw,8.2rem);
-    color: rgb(23, 19, 19)!important;
+.button-container{
+    display: flex;
+    flex-direction: row;
+    margin: 0 0 1em 0;
+    gap: 0.5em;
+}
+
+.loginRegister{
+    color: rgb(255, 255, 255);
+    height: 4vh;
+    width: 6.5vw;
+    border-radius: 0.75em;
+    box-shadow: 0 0.1em 0 #979797;;
+    border: none;
+    font-family: "KoHo", serif;
+    font-size: clamp(1rem,1vw,3rem);
+    background-color: rgba(116,99,99,0.6);
+}
+
+.google{
+    color: #8B6D6D;
+    background-color: #f3f3f3;
+    height: 3.5vh;
+    width: 12vw;
+    border-radius: 1em;
+    box-shadow: 0 0.15em 0 #9f9f9f;;
+    font-family: "KoHo", serif;
+    border: none;
+    font-size: clamp(0.8rem,0.8vw,2.4rem);
+}
+
+.googleIcon{
+    font-size: clamp(1.2rem,1.2vw,3.6rem)!important;
+    vertical-align: middle;
+    margin: 0 0.4em 0 0;
 }
