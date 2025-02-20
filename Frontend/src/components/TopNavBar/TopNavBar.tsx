@@ -9,7 +9,7 @@ export default function TopNavBar() {
 }
 
 function HomeSection() {
-    return <div className="top-navbar-section">HomeSection</div>
+    return <section className="top-navbar-section">HomeSection</section>
 }
 
 function CategoriesSection() {
@@ -23,5 +23,5 @@ function CategoriesSection() {
 }
 
 function SettingsSection() {
-    return <div className="top-navbar-section">SettingsSection</div>
+    return <section className="top-navbar-section">SettingsSection</section>
 }
