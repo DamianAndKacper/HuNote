@@ -3,10 +3,13 @@
         "invitation": "Every note in one place",
         "welcome": "WELCOME",
         "loginMessage": "Log into your account",
+        "registerMessage": "Create your new account",
         "email": "E-mail",
         "password": "Password",
         "login": "Log in",
         "register": "Register",
+        "name": "Full name",
+        "username": "Username",
         "google": "Login with Google"
     } 
 }
