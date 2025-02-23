@@ -8,6 +8,7 @@ $font-sizes: (
     small: clamp(1rem, 2.5vw, 3rem),
     medium: clamp(2rem, 5vw, 6rem),
 );
+// $colors:()
 
 @function font-size($size-name) {
     @return map.get($font-sizes, $size-name);
@@ -51,7 +52,31 @@ $font-sizes: (
     width: 40%;
     height: 100%;
     background-color: #8B6D6D;
-    @include flexCenter();
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.language-space{
+    height: 12.5vh;
+    width: 100%;
+}
+
+.poland{
+    width: 3vw;
+    box-shadow: 0.05em 0.05em 0.05em 0.05em #201e1e;
+    border: 0.1em black solid;
+}
+
+.poland:hover{
+    opacity: 0.5;
+}
+
+.language{
+    margin-top: 0.4em;
+    float: right;
+    background-color: transparent;
+    border: none;
 }
 
 .login-div{
@@ -69,7 +94,7 @@ $font-sizes: (
     border: 0.35em solid #665454;
     font-size: font-size(small);
     h2{
-        margin: 1em 0 0 0;
+        margin: 1.5em 0 0 0;
         font-size: font-size(medium);
         color: rgb(28, 26, 26);
         font-family: "KoHo", serif;
@@ -83,28 +108,71 @@ $font-sizes: (
     }
     img{
         width: 20%;
-        padding: 2%;
+        padding: 5%;
     }
     form{
         width: 100%;
         @include flexCenter(column);
         input{
-            display: block;
-            background-color: #f3f3f3;
-            width: 80%;
-            aspect-ratio: 7 / 1;
-            margin: 0 0 1em 0;
-            border-radius: 0.75em;
-            border: none;
-            box-shadow: 0 0.1em 0 #9f9f9f;;
-            font-size: font-size(verySmall);
-            font-family: "KoHo", serif;
-            color: #8B6D6D;
-            padding-left: 0.5em;
+            &[type="text"],&[type="email"],&[type="password"]{
+                display: block;
+                background-color: #f3f3f3;
+                width: 80%;
+                aspect-ratio: 7 / 1;
+                margin: 0 0 0.6em 0;
+                border-radius: 0.75em;
+                border: none;
+                box-shadow: 0 0.1em 0 #9f9f9f;;
+                font-size: font-size(verySmall);
+                font-family: "KoHo", serif;
+                color: #8B6D6D;
+                padding-left: 0.5em;
+            }
         }
         ::placeholder{
             color: #8B6D6D;
             opacity: 0.75;
+        }
+        .button-container{
+            display: flex;
+            margin: 0 0 0.6em 0;
+            .login-register{
+                color: #f3f3f3;
+                border-top-right-radius: 0.75em;
+                border-bottom-right-radius: 0.75em;
+                box-shadow: 0 0.1em 0 #979797;;
+                border: none;
+                font-family: "KoHo", serif;
+                font-size: font-size(small);
+                background-color: rgba(116,99,99,0.7);
+                padding-left: 0.2em;
+                padding-right: 0.5em;
+            }
+            .login-register:hover{
+                background-color: #483434;
+            }
+            .goBack{
+                color: #f3f3f3;
+                border-top-left-radius: 0.35em;
+                border-bottom-left-radius: 0.35em;
+                box-shadow: 0 0.1em 0 #979797;;
+                border: none;
+                font-family: "KoHo", serif;
+                font-size: font-size(small);
+                background-color: rgba(116,99,99,0.9);
+            }
+            .goBack:hover{
+                background-color: #483434;
+            }
+        }
+        .default-style{
+            flex-direction: column;
+            gap: 0.5em;
+            .login-register{
+                border-top-left-radius: 0.75em;
+                border-bottom-left-radius: 0.75em;
+                padding-left: 0.5em;
+            }
         }
         .google{
             color: #8B6D6D;
@@ -121,34 +189,9 @@ $font-sizes: (
                 margin: 0 0.4em 0 0;
             }
         }
-        .button-container{
-            display: flex;
-            flex-direction: row;
-            margin: 0 0 1em 0;
-            gap: 0.5em;
-            .loginRegister{
-                color: rgb(255, 255, 255);
-                border-radius: 0.75em;
-                box-shadow: 0 0.1em 0 #979797;;
-                border: none;
-                font-family: "KoHo", serif;
-                font-size: font-size(verySmall);
-                background-color: rgba(116,99,99,0.6);
-            }
+        .google:hover{
+            background-color: #483434;
+            color: #f3f3f3;
         }
     }
-}
-
-.poland{
-    width: 3vw;
-    box-shadow: 0.05em 0.05em 0.05em 0.05em #201e1e;
-    border: 0.1em black solid;
-}
-
-.language{
-    background-color: transparent;
-    border: none;
-    position: sticky;
-    left: 96%;
-    bottom: 95%;
 }
