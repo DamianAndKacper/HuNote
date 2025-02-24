@@ -1,15 +1,20 @@
 import "./Welcome.scss"
-import {WelcomeText} from "../../data/constants.ts"
+import { WelcomeText } from "../../data/constants.ts"
 import notebook from "../../assets/icons/notebook.webp";
 import poland from "../../assets/icons/poland.webp";
 import GoogleIcon from '@mui/icons-material/Google';
 import UndoIcon from '@mui/icons-material/Undo';
-import {useState} from "react";
+import { useState } from "react";
 import "../../utils/preventDefault.ts"
 
 interface LoginOrRegisterProps {
-    loginView: LoginView;
+    loginView?: LoginView;
     setLoginView: React.Dispatch<React.SetStateAction<LoginView>>;
+}
+enum LoginView {
+    Default,
+    Login,
+    Register
 }
 
 export default function Welcome() {
@@ -31,84 +36,77 @@ function LoginSection() {
     return <section className="login-div-space">
         <div className="language-space">
             <button className="language">
-                <img src={poland} className="poland" alt="Poland"/>
+                <img src={poland} className="poland" alt="Poland" />
             </button>
         </div>
         <div className="login-div">
             <h2>{WelcomeText.Welcome}</h2>
-            <p>{loginView == LoginView.Register ? WelcomeText.RegisterMessage: WelcomeText.LoginMessage}</p>
-            <img src={notebook} alt="Notebook"/>
+            <p>{loginView == LoginView.Register ? WelcomeText.RegisterMessage : WelcomeText.LoginMessage}</p>
+            <img src={notebook} alt="Notebook" />
             <form>
-                <LoginOrRegister loginView={loginView} setLoginView={setLoginView}/>
-                <button className="google"><GoogleIcon className="googleIcon"/>{WelcomeText.Google}</button>
+                <LoginOrRegister loginView={loginView} setLoginView={setLoginView} />
+                <button className="google"><GoogleIcon className="googleIcon" />{WelcomeText.Google}</button>
             </form>
         </div>
     </section>
 }
-function LoginOrRegister({ loginView, setLoginView }: LoginOrRegisterProps){
-    let test
-    let przyciski
+function LoginOrRegister({ loginView, setLoginView }: LoginOrRegisterProps) {
+    let content = <></>
     switch (loginView) {
         case LoginView.Default:
-            przyciski = <div className="button-container default-style">
-            <button className="login-register" onClick={() => setLoginView(LoginView.Login)}>{WelcomeText.Login}</button>
-            <button className="login-register" onClick={() => setLoginView(LoginView.Register)}>{WelcomeText.Register}</button>
+            content = <div className="button-container default-style">
+                <LoginButton setLoginView={setLoginView} />
+                <RegisterButton setLoginView={setLoginView} />
             </div>
             break;
         case LoginView.Login:
-            przyciski = <div className="button-container">
-            <button className="goBack" onClick={() => setLoginView(LoginView.Default)}><UndoIcon className="goBackIcon"/></button>
-            <button className="login-register" onClick={() => setLoginView(LoginView.Login)}>{WelcomeText.Login}</button>
-            </div>
-            test = <Login/>
+            content = <><Login />
+                <div className="button-container">
+                    <GoBackButton setLoginView={setLoginView} />
+                    <LoginButton setLoginView={setLoginView} />
+                </div>
+            </>
             break;
         case LoginView.Register:
-            przyciski = <div className="button-container">
-            <button className="goBack" onClick={() => setLoginView(LoginView.Default)}><UndoIcon className="goBackIcon"/></button>
-            <button className="login-register" onClick={() => setLoginView(LoginView.Register)}>{WelcomeText.Register}</button>
-            </div>
-            test = <Register/>
+            content = <><Register />
+                <div className="button-container">
+                    <GoBackButton setLoginView={setLoginView} />
+                    <RegisterButton setLoginView={setLoginView} />
+                </div></>
             break;
         default:
             break;
     }
-    return(
+    return content
+}
+
+function Login() {
+    return (
         <>
-            {test}
-            {przyciski}
+            <input type="email" placeholder={WelcomeText.Email} />
+            <input type="password" placeholder={WelcomeText.Password} />
         </>
     )
 }
 
-function EmailPassword(){
-    return(
+function Register() {
+    return (
         <>
-            <input type="email" placeholder={WelcomeText.Email}/>
-            <input type="password" placeholder={WelcomeText.Password}/>
+            <input type="text" placeholder={WelcomeText.Name} />
+            <input type="text" placeholder={WelcomeText.Username} />
+            <Login />
         </>
     )
 }
 
-function Login(){
-    return(
-        <>
-            <EmailPassword/>
-        </>
-    )
+function LoginButton({ setLoginView }: LoginOrRegisterProps) {
+    return <button className="login-register" onClick={() => setLoginView(LoginView.Login)}>{WelcomeText.Login}</button>
 }
 
-function Register(){
-    return(
-        <>
-            <input type="text" placeholder={WelcomeText.Name}/>
-            <input type="text" placeholder={WelcomeText.Username}/>
-            <EmailPassword/>
-        </>
-    )
+function RegisterButton({ setLoginView }: LoginOrRegisterProps) {
+    return <button className="login-register" onClick={() => setLoginView(LoginView.Register)}>{WelcomeText.Register}</button>
 }
 
-enum LoginView{
-    Default,
-    Login,
-    Register
+function GoBackButton({ setLoginView }: LoginOrRegisterProps) {
+    return <button className="goBack" onClick={() => setLoginView(LoginView.Default)}><UndoIcon className="goBackIcon" /></button>
 }
