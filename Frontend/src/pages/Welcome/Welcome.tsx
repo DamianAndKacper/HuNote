@@ -1,7 +1,6 @@
 import "./Welcome.scss"
 import { WelcomeText } from "../../data/constants.ts"
 import notebook from "../../assets/icons/notebook.webp";
-import poland from "../../assets/icons/poland.webp";
 import GoogleIcon from '@mui/icons-material/Google';
 import UndoIcon from '@mui/icons-material/Undo';
 import { PolishFlag } from "../../components/ui/Icons.tsx"
