@@ -1,0 +1,32 @@
+.home-main-div {
+    display: flex;
+    height: 90.9%;
+}
+
+.main-content {
+    flex-grow: 1;
+    color: black;
+    margin-top: 1em;
+}
+
+.notes-section {
+    .section-name {
+        align-items: center;
+        font-size: 2rem;
+        margin: 0;
+    }
+
+    .notes-list {
+        height: 13em;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 10em;
+        .note-square {
+            height: 100%;
+            width: 14em;
+            background-color: #e0dcdc;
+            border-radius: 2em;
+        }
+    }
+}
