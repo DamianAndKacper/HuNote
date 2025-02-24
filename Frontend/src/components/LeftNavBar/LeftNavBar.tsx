@@ -1,4 +1,4 @@
-import { Calendar, ThemeIcon, Flag } from "../ui/Icons"
+import { Calendar, ThemeIcon, PolishFlag } from "../ui/Icons"
 import "./LeftNavBar.scss"
 
 export default function LeftNavBar() {
@@ -22,6 +22,6 @@ function SettingsSection() {
     return <section className="left-navbar-section">
         <Calendar />
         <ThemeIcon />
-        <Flag />
+        <PolishFlag />
     </section>
 }
