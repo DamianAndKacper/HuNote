@@ -4,6 +4,7 @@ import notebook from "../../assets/icons/notebook.webp";
 import poland from "../../assets/icons/poland.webp";
 import GoogleIcon from '@mui/icons-material/Google';
 import UndoIcon from '@mui/icons-material/Undo';
+import { PolishFlag } from "../../components/ui/Icons.tsx"
 import { useState } from "react";
 import "../../utils/preventDefault.ts"
 
@@ -36,7 +37,7 @@ function LoginSection() {
     return <section className="login-div-space">
         <div className="language-space">
             <button className="language">
-                <img src={poland} className="poland" alt="Poland" />
+                <PolishFlag />
             </button>
         </div>
         <div className="login-div">
